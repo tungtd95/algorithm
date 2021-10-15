@@ -1,3 +1,4 @@
+package test
 import kotlin.random.Random
 
 fun createRandomList(size: Int, maxNumb: Int = 100000): List<Int> {
