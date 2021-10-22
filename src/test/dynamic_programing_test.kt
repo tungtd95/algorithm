@@ -40,4 +40,10 @@ class DynamicProgramingTest {
         assertEquals(2, LCS().lcs(3, 2, "ABC", "AC"))
         assertEquals(20, LCS().lcs(29, 28, "ACCGGTCGAGTGCGCGGAAGCCGGCCGAA", "GTCGTTCGGAATGCCGTTGCTCTGTAAA"))
     }
+
+    @Test
+    fun `test max breaking sum`() {
+        assertEquals(13, MaxBreakingSum().maxSum(12))
+        assertEquals(27, MaxBreakingSum().maxSum(24))
+    }
 }
