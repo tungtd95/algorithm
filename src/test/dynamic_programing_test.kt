@@ -1,9 +1,6 @@
 package test
 
-import dynamicprograming.CutRod
-import dynamicprograming.Fibonacci
-import dynamicprograming.MatrixChainMultiplication
-import dynamicprograming.MaxPathMatrix
+import dynamicprograming.*
 import org.junit.jupiter.api.Test
 import kotlin.test.assertEquals
 
@@ -35,5 +32,12 @@ class DynamicProgramingTest {
     fun `test matrix chain multiplication`() {
         assertEquals(26000, MatrixChainMultiplication().matrixMultiplication(5, intArrayOf(40, 20, 30, 10, 30)))
         assertEquals(4500, MatrixChainMultiplication().matrixMultiplication(4, intArrayOf(10, 30, 5, 60)))
+    }
+
+    @Test
+    fun `test longest common subsequence`() {
+        assertEquals(3, LCS().lcs(6, 6, "ABCDGH", "AEDFHR"))
+        assertEquals(2, LCS().lcs(3, 2, "ABC", "AC"))
+        assertEquals(20, LCS().lcs(29, 28, "ACCGGTCGAGTGCGCGGAAGCCGGCCGAA", "GTCGTTCGGAATGCCGTTGCTCTGTAAA"))
     }
 }
