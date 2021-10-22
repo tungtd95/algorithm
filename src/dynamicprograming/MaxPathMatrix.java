@@ -1,5 +1,7 @@
 package dynamicprograming;
 
+import test.UtilsKt;
+
 import java.awt.*;
 import java.io.*;
 import java.util.*;
@@ -56,13 +58,7 @@ public class MaxPathMatrix {
         int result = max(maxPathMiddle, maxPathLeft, maxPathRight) + currentPos;
         cache[row][column] = result;
 
-//        for (int i = 0; i < n; i++) {
-//            for (int j = 0; j < n; j++) {
-//                System.out.print(cache[i][j] + " ");
-//            }
-//            System.out.println();
-//        }
-//        System.out.println(">>>>>>>>><<<<<<<<");
+//        UtilsKt.print2DArray(cache);
 
         return result;
     }

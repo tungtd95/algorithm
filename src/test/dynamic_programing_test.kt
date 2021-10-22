@@ -2,6 +2,7 @@ package test
 
 import dynamicprograming.CutRod
 import dynamicprograming.Fibonacci
+import dynamicprograming.MatrixChainMultiplication
 import dynamicprograming.MaxPathMatrix
 import org.junit.jupiter.api.Test
 import kotlin.test.assertEquals
@@ -28,5 +29,11 @@ class DynamicProgramingTest {
             20,
             MaxPathMatrix().maximumPath(3, arrayOf(intArrayOf(6, 7, 4), intArrayOf(7, 6, 1), intArrayOf(3, 5, 7)))
         )
+    }
+
+    @Test
+    fun `test matrix chain multiplication`() {
+        assertEquals(26000, MatrixChainMultiplication().matrixMultiplication(5, intArrayOf(40, 20, 30, 10, 30)))
+        assertEquals(4500, MatrixChainMultiplication().matrixMultiplication(4, intArrayOf(10, 30, 5, 60)))
     }
 }

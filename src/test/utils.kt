@@ -14,3 +14,20 @@ fun createRandomListInput(size: Int, maxNumb: Int = 100000) {
         print("${i+1}, ")
     }
 }
+
+fun print2DArray(arr: Any) {
+    if (arr is Array<*>) {
+        if (arr.firstOrNull() is IntArray || arr.firstOrNull() is LongArray) {
+            arr.forEach { it ->
+                (it as? LongArray)?.forEach {
+                    print("$it ")
+                }
+                (it as? IntArray)?.forEach {
+                    print("$it ")
+                }
+                println()
+            }
+            println()
+        }
+    }
+}
