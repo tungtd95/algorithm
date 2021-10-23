@@ -8,26 +8,6 @@ import java.util.*;
 import java.lang.*;
 import java.io.*;
 
-class LCSMain {
-    public static void main(String[] args) {
-
-        Scanner sc = new Scanner(System.in);
-        int test = sc.nextInt();
-        while (test-- > 0) {
-            int p = sc.nextInt();             // Take size of both the strings as input
-            int q = sc.nextInt();
-
-            String s1 = sc.next();            // Take both the string as input
-            String s2 = sc.next();
-
-            LCS obj = new LCS();
-
-            System.out.println(obj.lcs(p, q, s1, s2));
-        }
-    }
-}// } Driver Code Ends
-
-
 public class LCS {
     //Function to find the length of longest common subsequence in two strings.
     int[][] cache;

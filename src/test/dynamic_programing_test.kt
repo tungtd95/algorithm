@@ -46,4 +46,35 @@ class DynamicProgramingTest {
         assertEquals(13, MaxBreakingSum().maxSum(12))
         assertEquals(27, MaxBreakingSum().maxSum(24))
     }
+
+    @Test
+    fun `test trapping rain water naive`() {
+        assertEquals(
+            10, TrappingRainWaterNaive()
+                .trappingWater(intArrayOf(3, 0, 0, 2, 0, 4), 6)
+        )
+        assertEquals(10, TrappingRainWaterNaive().trappingWater(intArrayOf(7, 4, 0, 9), 4))
+        assertEquals(0, TrappingRainWaterNaive().trappingWater(intArrayOf(6, 9, 9), 3))
+    }
+
+    @Test
+    fun `test maximize the cut segment`() {
+        assertEquals(4, MaximizeTheCutSegment().maximizeCuts(4, 2, 1, 1))
+        assertEquals(2, MaximizeTheCutSegment().maximizeCuts(5, 5, 3, 2))
+        assertEquals(2, MaximizeTheCutSegment().maximizeCuts(7, 5, 5, 2))
+        assertEquals(1, MaximizeTheCutSegment().maximizeCuts(7, 7, 7, 7))
+        assertEquals(0, MaximizeTheCutSegment().maximizeCuts(10000, 3, 3, 3))
+        assertEquals(0, MaximizeTheCutSegment().maximizeCuts(99999, 7, 7, 2)) // TODO: does not pass this test case
+    }
+
+    @Test
+    fun `test max possible amount`() {
+        assertEquals(7, MaxPossibleAmount().maxAmount(intArrayOf(5, 3, 2), 3))
+    }
+
+    @Test
+    fun `test count number of hops`() {
+        assertEquals(7, CountNumberOfHops().countWays(4))
+        assertEquals(1, CountNumberOfHops().countWays(1))
+    }
 }

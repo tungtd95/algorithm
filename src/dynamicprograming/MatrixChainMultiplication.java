@@ -8,25 +8,6 @@ import test.UtilsKt;
 import java.io.*;
 import java.util.*;
 
-class MatrixChainMultiplicationMain {
-    public static void main(String args[]) throws IOException {
-        BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
-        int t = Integer.parseInt(in.readLine());
-        while (t-- > 0) {
-            int N = Integer.parseInt(in.readLine());
-            String input_line[] = in.readLine().trim().split("\\s+");
-            int arr[] = new int[N];
-            for (int i = 0; i < N; i++)
-                arr[i] = Integer.parseInt(input_line[i]);
-
-            MatrixChainMultiplication ob = new MatrixChainMultiplication();
-            System.out.println(ob.matrixMultiplication(N, arr));
-        }
-    }
-}
-// } Driver Code Ends
-
-
 //User function Template for Java
 
 public class MatrixChainMultiplication {

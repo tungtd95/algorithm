@@ -5,20 +5,6 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-class FiboMain {
-    public static void main(String args[]) throws IOException {
-        BufferedReader read =
-                new BufferedReader(new InputStreamReader(System.in));
-        long n = Integer.parseInt(read.readLine());
-        Fibonacci ob = new Fibonacci();
-
-        System.out.println(ob.nthFibonacci(n));
-    }
-}// } Driver Code Ends
-
-
-//User function Template for Java
-
 //User function Template for Java
 public class Fibonacci {
     long firstNumb = 1L;
