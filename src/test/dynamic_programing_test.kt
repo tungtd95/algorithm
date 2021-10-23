@@ -2,6 +2,8 @@ package test
 
 import dynamicprograming.*
 import org.junit.jupiter.api.Test
+import submittion.FibonacciModified
+import java.math.BigInteger
 import kotlin.test.assertEquals
 
 class DynamicProgramingTest {
@@ -76,5 +78,10 @@ class DynamicProgramingTest {
     fun `test count number of hops`() {
         assertEquals(7, CountNumberOfHops().countWays(4))
         assertEquals(1, CountNumberOfHops().countWays(1))
+    }
+
+    @Test
+    fun `test fibonacci modified`() {
+        assertEquals(BigInteger.valueOf(5), FibonacciModified().fibonacciModified(0, 1, 5))
     }
 }
