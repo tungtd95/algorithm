@@ -3,6 +3,7 @@ package test
 import dynamicprograming.*
 import org.junit.jupiter.api.Test
 import submittion.FibonacciModified
+import submittion.TheCoinChangeProblem
 import java.math.BigInteger
 import kotlin.test.assertEquals
 
@@ -83,5 +84,18 @@ class DynamicProgramingTest {
     @Test
     fun `test fibonacci modified`() {
         assertEquals(BigInteger.valueOf(5), FibonacciModified().fibonacciModified(0, 1, 5))
+    }
+
+    @Test
+    fun `test the coin change problem`() {
+        assertEquals(4, TheCoinChangeProblem().getWays(4, arrayOf(2, 1, 3)))
+        assertEquals(5, TheCoinChangeProblem().getWays(10, arrayOf(2, 5, 3, 6)))
+        assertEquals(
+            10,
+            TheCoinChangeProblem().getWays(
+                15,
+                arrayOf(49, 22, 45, 6, 11, 20, 30, 10, 46, 8, 32, 48, 2, 41, 43, 5, 39, 16, 28, 44, 14, 4, 27, 36)
+            )
+        )
     }
 }
