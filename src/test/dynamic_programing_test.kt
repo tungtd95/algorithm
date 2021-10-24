@@ -3,6 +3,7 @@ package test
 import dynamicprograming.*
 import org.junit.jupiter.api.Test
 import submittion.FibonacciModified
+import submittion.StockMaximize
 import submittion.TheCoinChangeProblem
 import java.math.BigInteger
 import kotlin.test.assertEquals
@@ -97,5 +98,14 @@ class DynamicProgramingTest {
                 arrayOf(49, 22, 45, 6, 11, 20, 30, 10, 46, 8, 32, 48, 2, 41, 43, 5, 39, 16, 28, 44, 14, 4, 27, 36)
             )
         )
+    }
+
+    @Test
+    fun `test stock maximize`() {
+        assertEquals(0, StockMaximize().stockmax(arrayOf(5, 3, 2)))
+        assertEquals(1, StockMaximize().stockmax(arrayOf(1, 2)))
+        assertEquals(0, StockMaximize().stockmax(arrayOf(2, 1)))
+        assertEquals(197, StockMaximize().stockmax(arrayOf(1, 2, 100)))
+        assertEquals(3, StockMaximize().stockmax(arrayOf(1, 3, 1, 2)))
     }
 }
