@@ -1,43 +1,44 @@
 package dynamicprograming;
 
-public class MaximizeTheCutSegment {
-    int[] cache;
+import java.util.ArrayList;
+import java.util.List;
 
-    public int maximizeCuts(int n, int x, int y, int z) {
+public class MaximizeTheCutSegment {
+
+    long max = 0;
+
+    // TOTO: find someway to cache
+    public long maximizeCuts(int n, int x, int y, int z) {
         //Your code here
-        cache = new int[n];
-        for (int i = 0; i < n; i++) {
-            cache[i] = -1;
-        }
-        if (x == y && y == z) {
-            if (n % x == 0) return n / x;
+        List<Integer> uniqueSegments = filterUnique(x, y, z);
+        if (uniqueSegments.size() == 0) return 0;
+        if (uniqueSegments.size() == 1) {
+            if (n % x == 0) return 1;
             else return 0;
         }
-        int result = findMax(n, x, y, z, min(x, y, z));
-        if (result < 0) result = 0;
-        return result;
-    }
 
-    private int findMax(int n, int x, int y, int z, int min) {
-        if (n == min) return 1;
-        if (n < min) return Integer.MIN_VALUE;
-        if (cache[n - 1] >= 0) return cache[n - 1];
-        int result = max(findMax(n - x, x, y, z, min), findMax(n - y, x, y, z, min), findMax(n - z, x, y, z, min)) + 1;
-        cache[n - 1] = result;
-        return result;
-    }
-
-    private int max(int a, int b, int c) {
-        int max = a;
-        if (b > max) max = b;
-        if (c > max) max = c;
+        // algorithm start here
+        maximizeTheCutsInRange(uniqueSegments, 1, uniqueSegments.size(), n, 0);
         return max;
     }
 
-    private int min(int a, int b, int c) {
-        int min = a;
-        if (b < min) min = b;
-        if (c < min) min = c;
-        return min;
+    private void maximizeTheCutsInRange(List<Integer> segments, int start, int end, int n, long maxProgress) {
+        if (n == 0) {
+            max = Long.max(max, maxProgress);
+            return;
+        }
+        if (n < 0) return;
+
+        for (int i = start; i <= end; i++) {
+            maximizeTheCutsInRange(segments, i, end, n - segments.get(i - 1), maxProgress + 1);
+        }
+    }
+
+    private List<Integer> filterUnique(int x, int y, int z) {
+        ArrayList<Integer> result = new ArrayList<>();
+        result.add(x);
+        if (y != x) result.add(y);
+        if (z != x && z != y) result.add(z);
+        return result;
     }
 }
