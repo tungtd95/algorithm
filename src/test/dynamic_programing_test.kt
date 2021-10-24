@@ -3,6 +3,7 @@ package test
 import dynamicprograming.*
 import org.junit.jupiter.api.Test
 import submittion.FibonacciModified
+import submittion.RedJohnIsBack
 import submittion.StockMaximize
 import submittion.TheCoinChangeProblem
 import java.math.BigInteger
@@ -107,5 +108,16 @@ class DynamicProgramingTest {
         assertEquals(0, StockMaximize().stockmax(arrayOf(2, 1)))
         assertEquals(197, StockMaximize().stockmax(arrayOf(1, 2, 100)))
         assertEquals(3, StockMaximize().stockmax(arrayOf(1, 3, 1, 2)))
+    }
+
+    @Test
+    fun `test red john is back`() {
+        assertEquals(3, RedJohnIsBack().redJohn(7))
+        assertEquals(2, RedJohnIsBack().redJohn(5))
+        assertEquals(6, RedJohnIsBack().redJohn(10))
+        assertEquals(4, RedJohnIsBack().redJohn(9))
+        assertEquals(3385, RedJohnIsBack().redJohn(34))
+        assertEquals(19385, RedJohnIsBack().redJohn(40))
+        assertEquals(377823, RedJohnIsBack().redJohn(50))
     }
 }
