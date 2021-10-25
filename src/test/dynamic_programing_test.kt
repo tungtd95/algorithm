@@ -132,4 +132,10 @@ class DynamicProgramingTest {
         assertEquals(164, SamAndSubStr().substrings("123"))
         assertEquals(597988838, SamAndSubStr().substrings(longStringNumb))
     }
+
+    @Test
+    fun `test unbounded knapsack`() {
+        assertEquals(12, Knapsack().unboundedKnapsack(12, arrayOf(1, 6, 9)))
+        assertEquals(9, Knapsack().unboundedKnapsack(9, arrayOf(3, 4, 4, 4, 8)))
+    }
 }
