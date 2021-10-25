@@ -2,10 +2,7 @@ package test
 
 import dynamicprograming.*
 import org.junit.jupiter.api.Test
-import submittion.FibonacciModified
-import submittion.RedJohnIsBack
-import submittion.StockMaximize
-import submittion.TheCoinChangeProblem
+import submittion.*
 import java.math.BigInteger
 import kotlin.test.assertEquals
 
@@ -119,5 +116,20 @@ class DynamicProgramingTest {
         assertEquals(3385, RedJohnIsBack().redJohn(34))
         assertEquals(19385, RedJohnIsBack().redJohn(40))
         assertEquals(377823, RedJohnIsBack().redJohn(50))
+    }
+
+    @Test
+    fun `test lego blocks`() {
+        assertEquals(3, LegoBlocks().legoBlocks(2, 2))
+        assertEquals(7, LegoBlocks().legoBlocks(3, 2))
+        assertEquals(9, LegoBlocks().legoBlocks(2, 3))
+//        assertEquals(3375, LegoBlocks().legoBlocks(4, 4))
+    }
+
+    @Test
+    fun `test sam and substring`() {
+        assertEquals(23, SamAndSubStr().substrings("16"))
+        assertEquals(164, SamAndSubStr().substrings("123"))
+        assertEquals(597988838, SamAndSubStr().substrings(longStringNumb))
     }
 }
