@@ -138,4 +138,40 @@ class DynamicProgramingTest {
         assertEquals(12, Knapsack().unboundedKnapsack(12, arrayOf(1, 6, 9)))
         assertEquals(9, Knapsack().unboundedKnapsack(9, arrayOf(3, 4, 4, 4, 8)))
     }
+
+    @Test
+    fun `test longest common subsequence untracing`() {
+        assertEquals(3, TheLongestCommonSubSequence().longestNoTracing("ABCDGH", "AEDFHR"))
+        assertEquals(2, TheLongestCommonSubSequence().longestNoTracing("ABC", "AC"))
+        assertEquals(323, TheLongestCommonSubSequence().longestNoTracing(longText1, longText2))
+        assertEquals(
+            20,
+            TheLongestCommonSubSequence().longestNoTracing(
+                "ACCGGTCGAGTGCGCGGAAGCCGGCCGAA",
+                "GTCGTTCGGAATGCCGTTGCTCTGTAAA"
+            )
+        )
+    }
+
+    @Test
+    fun `test longest common subsequence with tracing`() {
+        assert(
+            arrayOf(1, 2, 3).isEqualTo(
+                TheLongestCommonSubSequence().longestCommonSubsequence(
+                    arrayOf(1, 2, 3, 4, 1),
+                    arrayOf(3, 4, 1, 2, 1, 3)
+                )
+            )
+
+        )
+        assert(
+            arrayOf(3, 3, 9, 9, 7, 0).isEqualTo(
+                TheLongestCommonSubSequence().longestCommonSubsequence(
+                    arrayOf(3, 9, 8, 3, 9, 7, 9, 7, 0),
+                    arrayOf(3, 3, 9, 9, 9, 1, 7, 2, 0, 6)
+                )
+            )
+
+        )
+    }
 }
