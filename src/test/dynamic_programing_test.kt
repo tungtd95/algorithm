@@ -60,6 +60,13 @@ class DynamicProgramingTest {
     }
 
     @Test
+    fun `test trapping rain water serious`() {
+        assertEquals(10, TrappingRainWater().trap(intArrayOf(3, 0, 0, 2, 0, 4)))
+        assertEquals(10, TrappingRainWater().trap(intArrayOf(7, 4, 0, 9)))
+        assertEquals(0, TrappingRainWater().trap(intArrayOf(6, 9, 9)))
+    }
+
+    @Test
     fun `test maximize the cut segment`() {
         assertEquals(4, MaximizeTheCutSegment().maximizeCuts(4, 2, 1, 1))
         assertEquals(2, MaximizeTheCutSegment().maximizeCuts(5, 5, 3, 2))
