@@ -190,9 +190,26 @@ class DynamicProgramingTest {
     }
 
     @Test
-    fun `coin change`() {
+    fun `test coin change`() {
         assertEquals(3, CoinChange().coinChange(intArrayOf(1, 2, 5), 11))
         assertEquals(-1, CoinChange().coinChange(intArrayOf(2), 3))
         assertEquals(0, CoinChange().coinChange(intArrayOf(1), 0))
+    }
+
+    @Test
+    fun `test Longest Increasing Path in a Matrix`() {
+        assertEquals(
+            4,
+            LongestIncreasingPathInMatrix().longestIncreasingPath(
+                arrayOf(
+                    intArrayOf(3, 4, 5),
+                    intArrayOf(3, 2, 6),
+                    intArrayOf(2, 2, 1)
+                )
+            )
+        )
+
+        assertEquals(1, LongestIncreasingPathInMatrix().longestIncreasingPath(arrayOf(intArrayOf(1))))
+        assertEquals(2, LongestIncreasingPathInMatrix().longestIncreasingPath(arrayOf(intArrayOf(1, 2))))
     }
 }
