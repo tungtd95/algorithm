@@ -34,6 +34,11 @@ fun print2DArray(arr: Any) {
     }
 }
 
+fun printList(list: List<*>) {
+    list.forEach { print("$it ") }
+    println()
+}
+
 fun Array<*>.isEqualTo(other: Array<*>): Boolean {
     if (this.size != other.size) return false
     this.forEachIndexed { index, i ->
