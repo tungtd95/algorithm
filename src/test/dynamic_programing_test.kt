@@ -181,4 +181,11 @@ class DynamicProgramingTest {
 
         )
     }
+
+    @Test
+    fun `coin change`() {
+        assertEquals(3, CoinChange().coinChange(intArrayOf(1, 2, 5), 11))
+        assertEquals(-1, CoinChange().coinChange(intArrayOf(2), 3))
+        assertEquals(0, CoinChange().coinChange(intArrayOf(1), 0))
+    }
 }
