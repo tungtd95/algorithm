@@ -212,4 +212,16 @@ class DynamicProgramingTest {
         assertEquals(1, LongestIncreasingPathInMatrix().longestIncreasingPath(arrayOf(intArrayOf(1))))
         assertEquals(2, LongestIncreasingPathInMatrix().longestIncreasingPath(arrayOf(intArrayOf(1, 2))))
     }
+
+    @Test
+    fun `test minimum path sum`() {
+        assertEquals(
+            7,
+            MinimumPathSum().minPathSum(arrayOf(intArrayOf(1, 3, 1), intArrayOf(1, 5, 1), intArrayOf(4, 2, 1)))
+        )
+        assertEquals(
+            12,
+            MinimumPathSum().minPathSum(arrayOf(intArrayOf(1, 2, 3), intArrayOf(4, 5, 6)))
+        )
+    }
 }
