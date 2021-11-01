@@ -224,4 +224,10 @@ class DynamicProgramingTest {
             MinimumPathSum().minPathSum(arrayOf(intArrayOf(1, 2, 3), intArrayOf(4, 5, 6)))
         )
     }
+
+    @Test
+    fun `test the 0-1 knapsack`() {
+        assertEquals(3, The01Knapsack().knapSack(4, intArrayOf(4, 5, 1), intArrayOf(1, 2, 3), 3))
+        assertEquals(0, The01Knapsack().knapSack(3, intArrayOf(4, 5, 6), intArrayOf(1, 2, 3), 3))
+    }
 }
