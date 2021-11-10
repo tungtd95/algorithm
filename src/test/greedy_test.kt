@@ -1,5 +1,6 @@
 package test
 
+import greedy.MarcCakewalk
 import greedy.MinimumAbsDiff
 import org.junit.jupiter.api.Test
 import kotlin.test.assertEquals
@@ -16,5 +17,10 @@ class GreedyTest {
             3,
             MinimumAbsDiff().minimumAbsoluteDifference(arrayOf(1, -3, 71, 68, 17))
         )
+    }
+
+    @Test
+    fun `test marc cake walk`() {
+        assertEquals(79L, MarcCakewalk().marcsCakewalk(arrayOf(7, 4, 9, 6)))
     }
 }
