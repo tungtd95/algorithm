@@ -1,6 +1,7 @@
 package test
 
 import greedy.GridChallenge
+import greedy.LuckBalance
 import greedy.MarcCakewalk
 import greedy.MinimumAbsDiff
 import org.junit.jupiter.api.Test
@@ -28,5 +29,23 @@ class GreedyTest {
     @Test
     fun `test grid challenge`() {
         assertEquals("YES", GridChallenge().gridChallenge(arrayOf("ebacd", "fghij", "olmkn", "trpqs", "xywuv")))
+    }
+
+    @Test
+    fun `test luck balance`() {
+        assertEquals(
+            29,
+            LuckBalance().luckBalance(
+                3,
+                arrayOf(arrayOf(5, 1), arrayOf(2, 1), arrayOf(1, 1), arrayOf(8, 1), arrayOf(10, 0), arrayOf(5, 0))
+            )
+        )
+        assertEquals(
+            10,
+            LuckBalance().luckBalance(
+                2,
+                arrayOf(arrayOf(5, 0), arrayOf(1, 1), arrayOf(4, 0))
+            )
+        )
     }
 }
