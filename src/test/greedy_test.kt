@@ -79,4 +79,9 @@ class GreedyTest {
         assertEquals(13, GreedyFlorist().getMinimumCost(3, arrayOf(2, 5, 6)))
         assertEquals(29, GreedyFlorist().getMinimumCost(3, arrayOf(1, 3, 5, 7, 9)))
     }
+
+    @Test
+    fun `test max min`() {
+        assertEquals(20, MaxMin().maxMin(3, arrayOf(10, 100, 300, 200, 1000, 20, 30)))
+    }
 }
