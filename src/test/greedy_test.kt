@@ -92,4 +92,9 @@ class GreedyTest {
         assertEquals(3, GoodlandElectricity().pylons(3, arrayOf(0, 1, 0, 0, 0, 1, 1, 1, 1, 1)))
         assertEquals(4, GoodlandElectricity().pylons(200, goodlandElectricityArr))
     }
+
+    @Test
+    fun `test cutting board`() {
+        assertEquals(42, CuttingBoard().boardCutting(cost_y = arrayOf(2, 1, 3, 1, 4), cost_x = arrayOf(4, 1, 2)))
+    }
 }
