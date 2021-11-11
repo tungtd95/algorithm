@@ -84,4 +84,12 @@ class GreedyTest {
     fun `test max min`() {
         assertEquals(20, MaxMin().maxMin(3, arrayOf(10, 100, 300, 200, 1000, 20, 30)))
     }
+
+    @Test
+    fun `test good land electricity`() {
+        assertEquals(2, GoodlandElectricity().pylons(2, arrayOf(0, 1, 1, 1, 1, 0)))
+        assertEquals(-1, GoodlandElectricity().pylons(3, arrayOf(0, 1, 1, 1, 0, 0, 0)))
+        assertEquals(3, GoodlandElectricity().pylons(3, arrayOf(0, 1, 0, 0, 0, 1, 1, 1, 1, 1)))
+        assertEquals(4, GoodlandElectricity().pylons(200, goodlandElectricityArr))
+    }
 }
