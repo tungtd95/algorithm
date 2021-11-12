@@ -112,4 +112,14 @@ class GreedyTest {
         }
         assertEquals(100000, ChiefHopper().chiefHopper(longArr.toTypedArray()))
     }
+
+    @Test
+    fun `test sherlock and minimax`() {
+        assertEquals(11, SherlockAndMinimax().sherlockAndMinimax(arrayOf(5, 8), 4, 11))
+        assertEquals(4, SherlockAndMinimax().sherlockAndMinimax(arrayOf(5, 8, 14), 4, 9))
+        assertEquals(6, SherlockAndMinimax().sherlockAndMinimax(arrayOf(3, 5, 7, 9), 6, 8))
+        assertEquals(69, SherlockAndMinimax().sherlockAndMinimax(arrayOf(38, 50, 60, 30, 48), 23, 69))
+
+        assertEquals(493216533, SherlockAndMinimax().sherlockAndMinimax(sherlockAndMinimaxArr, 64214888, 789945206))
+    }
 }
