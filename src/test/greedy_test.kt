@@ -97,4 +97,19 @@ class GreedyTest {
     fun `test cutting board`() {
         assertEquals(42, CuttingBoard().boardCutting(cost_y = arrayOf(2, 1, 3, 1, 4), cost_x = arrayOf(4, 1, 2)))
     }
+
+    @Test
+    fun `test chief hopper`() {
+        assertEquals(4, ChiefHopper().chiefHopper(arrayOf(3, 4, 3, 2, 4)))
+
+        val inputStream = File("${Paths.get("").toAbsolutePath()}/src/test/test_chief_hopper.dat").inputStream()
+        val longArr = arrayListOf<Int>()
+        inputStream.bufferedReader().useLines {
+            val rawStringArr = it.first().split(" ")
+            rawStringArr.forEach {
+                longArr.add(it.toInt())
+            }
+        }
+        assertEquals(100000, ChiefHopper().chiefHopper(longArr.toTypedArray()))
+    }
 }
