@@ -14,10 +14,11 @@ class BFS {
             graph[ints[1]].add(ints[0])
         }
         // init cost
-        travelCost = Array(n + 1) { 0 }
+        travelCost = Array(n + 1) { -1 }
 
         // start bfs
         vertexQueue.add(s)
+        travelCost[s] = 0
         while (vertexQueue.isNotEmpty()) {
             val currentVertex: Int = vertexQueue.removeAt(0)
             graph[currentVertex].forEach {
@@ -28,17 +29,8 @@ class BFS {
                 }
             }
         }
-
-        val result = arrayListOf<Int>()
-        for (i in 1 until travelCost.size) {
-            if (i != s) {
-                if (travelCost[i] > 0) {
-                    result.add(travelCost[i])
-                } else {
-                    result.add(-1)
-                }
-            }
-        }
+        val result = ArrayList(travelCost.takeLast(n))
+        result.removeAt(s - 1)
         return result.toTypedArray()
     }
 }
