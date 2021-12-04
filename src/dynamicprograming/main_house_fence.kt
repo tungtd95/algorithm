@@ -1,3 +1,5 @@
+package dynamicprograming
+
 /**
  * submission for House Fence https://codeforces.com/contest/448/problem/C
  *

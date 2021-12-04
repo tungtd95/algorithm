@@ -1,4 +1,4 @@
-package submittion
+package dynamicprograming
 
 class TrappingRainWater {
     fun trap(height: IntArray): Int {

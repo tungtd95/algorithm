@@ -1,6 +1,4 @@
-package submittion
-
-import test.printList
+package dynamicprograming
 
 class TrappingRainWaterOptimized {
     fun trap(height: IntArray): Int {

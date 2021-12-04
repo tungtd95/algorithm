@@ -1,3 +1,5 @@
+package divideandconquer
+
 /**
  * Find max sub-array problem https://www.hackerrank.com/challenges/maxsubarray/problem
  *

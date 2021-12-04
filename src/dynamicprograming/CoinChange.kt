@@ -1,4 +1,4 @@
-package submittion
+package dynamicprograming
 
 class CoinChange {
     lateinit var cache: Array<Int>

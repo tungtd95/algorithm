@@ -2,7 +2,6 @@ package test
 
 import dynamicprograming.*
 import org.junit.jupiter.api.Test
-import submittion.*
 import java.math.BigInteger
 import kotlin.test.assertEquals
 
@@ -84,11 +83,6 @@ class DynamicProgramingTest {
     }
 
     @Test
-    fun `test max possible amount`() {
-        assertEquals(7, MaxPossibleAmount().maxAmount(intArrayOf(5, 3, 2), 3))
-    }
-
-    @Test
     fun `test count number of hops`() {
         assertEquals(7, CountNumberOfHops().countWays(4))
         assertEquals(1, CountNumberOfHops().countWays(1))
@@ -130,14 +124,6 @@ class DynamicProgramingTest {
         assertEquals(3385, RedJohnIsBack().redJohn(34))
         assertEquals(19385, RedJohnIsBack().redJohn(40))
         assertEquals(377823, RedJohnIsBack().redJohn(50))
-    }
-
-    @Test
-    fun `test lego blocks`() {
-        assertEquals(3, LegoBlocks().legoBlocks(2, 2))
-        assertEquals(7, LegoBlocks().legoBlocks(3, 2))
-        assertEquals(9, LegoBlocks().legoBlocks(2, 3))
-//        assertEquals(3375, LegoBlocks().legoBlocks(4, 4))
     }
 
     @Test

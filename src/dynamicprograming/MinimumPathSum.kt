@@ -1,6 +1,4 @@
-package submittion
-
-import test.print2DArray
+package dynamicprograming
 
 class MinimumPathSum {
     lateinit var cache: Array<Array<Int>>

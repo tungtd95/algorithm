@@ -1,6 +1,4 @@
-package submittion
-
-import test.print2DArray
+package dynamicprograming
 
 fun main(args: Array<String>) {
     val first_multiple_input = readLine()!!.trimEnd().split(" ")

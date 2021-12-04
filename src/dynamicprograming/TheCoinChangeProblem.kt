@@ -1,4 +1,4 @@
-package submittion
+package dynamicprograming
 
 fun main(args: Array<String>) {
     val first_multiple_input = readLine()!!.trimEnd().split(" ")

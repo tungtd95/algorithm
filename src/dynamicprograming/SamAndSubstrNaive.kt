@@ -1,4 +1,4 @@
-package submittion
+package dynamicprograming
 
 import kotlin.math.pow
 
