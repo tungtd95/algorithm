@@ -1,6 +1,7 @@
 package test
 
 import graph.BFS
+import graph.BFSofGraph
 import org.junit.jupiter.api.Test
 
 class GraphTest {
@@ -35,6 +36,16 @@ class GraphTest {
                     3
                 )
             )
+        )
+    }
+
+    @Test
+    fun `test bfs of graph`() {
+        assert(
+            BFSofGraph().bfsOfGraph(
+                5,
+                arrayListOf(arrayListOf(1, 2, 3), arrayListOf(), arrayListOf(4), arrayListOf(), arrayListOf())
+            ).toArray().isEqualTo(arrayOf(0, 1, 2, 3, 4))
         )
     }
 }
