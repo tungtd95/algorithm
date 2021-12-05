@@ -2,6 +2,7 @@ package test
 
 import graph.BFS
 import graph.BFSofGraph
+import graph.DFSofGraph
 import org.junit.jupiter.api.Test
 
 class GraphTest {
@@ -46,6 +47,22 @@ class GraphTest {
                 5,
                 arrayListOf(arrayListOf(1, 2, 3), arrayListOf(), arrayListOf(4), arrayListOf(), arrayListOf())
             ).toArray().isEqualTo(arrayOf(0, 1, 2, 3, 4))
+        )
+    }
+
+    @Test
+    fun `test dfs of graph`() {
+        assert(
+            DFSofGraph().dfsOfGraph(
+                5,
+                arrayListOf(arrayListOf(1, 2, 4), arrayListOf(0), arrayListOf(0), arrayListOf(4), arrayListOf(0, 3))
+            ).toArray().isEqualTo(arrayOf(0, 1, 2, 4, 3))
+        )
+        assert(
+            DFSofGraph().dfsOfGraph(
+                4,
+                arrayListOf(arrayListOf(1, 3), arrayListOf(2), arrayListOf(1), arrayListOf(0))
+            ).toArray().isEqualTo(arrayOf(0, 1, 2, 3))
         )
     }
 }
