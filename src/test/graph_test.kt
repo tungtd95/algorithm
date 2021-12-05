@@ -3,7 +3,9 @@ package test
 import graph.BFS
 import graph.BFSofGraph
 import graph.DFSofGraph
+import graph.FindNumbOfIsland
 import org.junit.jupiter.api.Test
+import kotlin.test.assertEquals
 
 class GraphTest {
 
@@ -63,6 +65,28 @@ class GraphTest {
                 4,
                 arrayListOf(arrayListOf(1, 3), arrayListOf(2), arrayListOf(1), arrayListOf(0))
             ).toArray().isEqualTo(arrayOf(0, 1, 2, 3))
+        )
+    }
+
+    @Test
+    fun `test find numb of island`() {
+        assertEquals(
+            FindNumbOfIsland().numIslands(
+                arrayOf(
+                    charArrayOf('0', '1', '1', '1', '0', '0', '0'),
+                    charArrayOf('0', '0', '1', '1', '0', '1', '0')
+                )
+            ), 2
+        )
+        assertEquals(
+            FindNumbOfIsland().numIslands(
+                arrayOf(
+                    charArrayOf('0', '1'),
+                    charArrayOf('1', '0'),
+                    charArrayOf('1', '1'),
+                    charArrayOf('1', '0'),
+                )
+            ), 1
         )
     }
 }
