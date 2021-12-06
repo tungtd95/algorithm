@@ -1,11 +1,10 @@
 package test
 
-import graph.BFS
-import graph.BFSofGraph
-import graph.DFSofGraph
-import graph.FindNumbOfIsland
+import graph.*
 import org.junit.jupiter.api.Test
 import kotlin.test.assertEquals
+import kotlin.test.assertFalse
+import kotlin.test.assertTrue
 
 class GraphTest {
 
@@ -87,6 +86,30 @@ class GraphTest {
                     charArrayOf('1', '0'),
                 )
             ), 1
+        )
+    }
+
+    @Test
+    fun `test bipartite graph`() {
+        assertTrue(BipartiteGraph().isBipartite(3, arrayListOf(arrayListOf(1), arrayListOf(0, 2), arrayListOf(1))))
+        assertFalse(
+            BipartiteGraph().isBipartite(
+                4,
+                arrayListOf(arrayListOf(2, 3), arrayListOf(3), arrayListOf(0, 3), arrayListOf(0, 1, 2))
+            )
+        )
+        assertFalse(
+            BipartiteGraph().isBipartite(
+                6,
+                arrayListOf(
+                    arrayListOf(1, 2),
+                    arrayListOf(0),
+                    arrayListOf(0),
+                    arrayListOf(4, 5),
+                    arrayListOf(3, 5),
+                    arrayListOf(3, 4)
+                )
+            )
         )
     }
 }
