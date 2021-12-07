@@ -2,6 +2,8 @@ package test
 
 import graph.*
 import org.junit.jupiter.api.Test
+import java.io.File
+import java.nio.file.Paths
 import kotlin.test.assertEquals
 import kotlin.test.assertFalse
 import kotlin.test.assertTrue
@@ -111,5 +113,27 @@ class GraphTest {
                 )
             )
         )
+    }
+
+    @Test
+    fun `test kruskal`() {
+        assertEquals(
+            12,
+            Kruskal.kruskals(4, listOf(1, 1, 4, 2, 3, 3), listOf(2, 3, 1, 4, 2, 4), listOf(5, 3, 6, 7, 4, 5))
+        )
+
+        val inputStream = File("${Paths.get("").toAbsolutePath()}/src/test/test_kruskal.dat").inputStream()
+        val from = arrayListOf<Int>()
+        val to = arrayListOf<Int>()
+        val weight = arrayListOf<Int>()
+        inputStream.bufferedReader().useLines {
+            it.forEach { str ->
+                val rawStringArr = str.split(" ")
+                from.add(rawStringArr[0].toInt())
+                to.add(rawStringArr[1].toInt())
+                weight.add(rawStringArr[2].toInt())
+            }
+        }
+        assertEquals(6359060, Kruskal.kruskals(1000, from, to, weight))
     }
 }
