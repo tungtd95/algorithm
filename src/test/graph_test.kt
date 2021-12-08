@@ -208,4 +208,30 @@ class GraphTest {
                 "3 4 5 3 4 5 5 4 4 7 6 4 1 4 5 5 5 4 5 6 5 6 4 5 3 5 5 6 2 6 3 3 6 5 3 6 3 2 6 4 1 6 3 4 5 6 7 7 3 6 3 5 3 5 4 7 4 4 6 4 5 5 5 4 2 2 3 6 4 6 4 4 5 4 6 3 5 5 4 4 4 2 1 3 3 3 2\n"
         assertEquals(expectResultInStr, resultInStr)
     }
+
+    @Test
+    fun `test road and library`() {
+        assertEquals(
+            4,
+            RoadAndLibrary().roadsAndLibraries(3, 2, 1, arrayOf(arrayOf(1, 2), arrayOf(3, 1), arrayOf(2, 3)))
+        )
+        assertEquals(
+            12,
+            RoadAndLibrary().roadsAndLibraries(
+                6,
+                2,
+                5,
+                arrayOf(arrayOf(1, 3), arrayOf(3, 4), arrayOf(2, 4), arrayOf(1, 2), arrayOf(2, 3), arrayOf(5, 6))
+            )
+        )
+        assertEquals(
+            805,
+            RoadAndLibrary().roadsAndLibraries(9, 91, 84, arrayOf(arrayOf(8, 2), arrayOf(2, 9)))
+        )
+
+        assertEquals(
+            5,
+            RoadAndLibrary().roadsAndLibraries(1, 5, 3, arrayOf())
+        )
+    }
 }
