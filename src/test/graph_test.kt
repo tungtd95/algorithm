@@ -138,6 +138,25 @@ class GraphTest {
     }
 
     @Test
+    fun `test prim`() {
+        assertEquals(
+            15,
+            Prim().prims(
+                5,
+                arrayOf(
+                    arrayOf(1, 2, 3),
+                    arrayOf(1, 3, 4),
+                    arrayOf(4, 2, 6),
+                    arrayOf(5, 2, 2),
+                    arrayOf(2, 3, 5),
+                    arrayOf(3, 5, 7)
+                ),
+                1
+            )
+        )
+    }
+
+    @Test
     fun `test dijkstra original`() {
         assertTrue(
             Dijkstra().shortestReach(
