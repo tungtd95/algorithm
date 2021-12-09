@@ -234,4 +234,21 @@ class GraphTest {
             RoadAndLibrary().roadsAndLibraries(1, 5, 3, arrayOf())
         )
     }
+
+    @Test
+    fun `test jack go to rapture`() {
+        JackGoToRapture().getCost(
+            5,
+            arrayListOf(1, 3, 1, 4, 2),
+            arrayListOf(2, 5, 4, 5, 3),
+            arrayListOf(60, 70, 120, 150, 80)
+        )
+
+        JackGoToRapture().getCost(
+            5,
+            arrayListOf(1, 2, 3, 4, 1, 3),
+            arrayListOf(2, 3, 4, 5, 3, 5),
+            arrayListOf(30, 50, 70, 90, 70, 85)
+        )
+    }
 }
